@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Games</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+
+    <!-- style for nav bar -->
+
+    <style>
+
+      .nav-button {
+        padding: 8px 16px; 
+        font-size: 14px; 
+        background-color: #111;
+        color: #999;
+        border: 2px solid #000; 
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        margin-right: 10px;
+      }
+  
+      .nav-button:first-child {
+        margin-right: 0;
+      }
+  
+      h2 {
+        margin-right: 10px;
+      }
+   
+      .nav-button:hover {
+        background-color: #fff; 
+        color: #333;
+      }
+
+      .label-container {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .label {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      color: #fff;
+      padding: 2px 0;
+      border-radius: 3px;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .label-container:hover .label {
+      opacity: 1;
+    }
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="images/logo.gif" alt="logo">
+      <h2>Banana Games</h2>
+      <button class="nav-button" onclick="emulator()">Normal Games</button>
+      <button class="nav-button" onclick="cloakedtab()">Open AB Cloaked Tab</button>
+      <button class="nav-button" onclick="learningtab()">Open Learning Cloaked Tab</button>
+      <button class="nav-button" onclick="eggycar()">Eggy Car Site</button>
+      <button class="nav-button" onclick="thatoneguy()">thatoneguy AJ</button>
+      <button class="nav-button" onclick="shoutouts()">Shoutouts</button>
+    </nav>
+
+<script>
+
+function openNewTab(url) {
+    window.open(url, '_blank');
+  }
+
+function emulator(){
+    window.location.href = 'index.html';
+  }
+
+
+function cloakedtab() {
+    var newWindow = window.open('about:blank', '_blank');
+
+    if (newWindow) {
+        var iframe = document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.margin = '0';
+        iframe.src = window.location.href;
+        
+        newWindow.document.body.style.margin = '0';
+        newWindow.document.body.appendChild(iframe);
+    } else {
+        alert('Unable to open a new window. Please check your browser settings.');
+    }
+
+}
+
+function eggycar(){
+    window.location.href = 'eggy-car.html';
+  }
+
+function thatoneguy() {
+
+  openNewTab('https://thatoneguyaj.weebly.com')
+
+}
+
+function learningtab() {
+  const randomNumber = Math.floor(Math.random() * 5);
+
+  if (randomNumber === 0) {
+    cloaked0();
+  } else if (randomNumber === 1) {
+    cloaked1();
+  } else if (randomNumber === 2) {
+    cloaked2();
+  } else if (randomNumber === 3) {
+    cloaked3();
+  } else if (randomNumber === 4) {
+    cloaked4();
+  }
+}
+
+function cloaked0() {
+  openNewTab('cloaked/classroom.html');
+}
+
+function cloaked1() {
+  openNewTab('cloaked/docs.html');
+}
+
+function cloaked2() {
+  openNewTab('cloaked/drive.html');
+}
+
+function cloaked3() {
+  openNewTab('cloaked/sheets.html');
+}
+
+function cloaked4() {
+  openNewTab('cloaked/slides.html');
+}
+
+function shoutouts() {
+  window.location.href = 'shoutouts.html'
+}
+
+</script>
+
+
+    <div class="featured">
+        <h1>Popular:</h1>
+        <div class="column">
+          <div class="label-container">
+          <a href="retro-games/doom64/">
+            <img src="retro-images/doom64.png">
+              <span class="label">Doom 64</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          </div>
+
+
+          <div class="label-container">
+          <a href="retro-games/custom/">
+            <img src="retro-images/custom.png">
+            <span class="label">Custom ROM</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+        <div class="row">
+          <div class="label-container">
+          <a href="retro-games/supermario64/">
+            <img src="retro-images/supermario64.png">
+            <span class="label">Super Mario 64</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+        <div class="row">
+          <div class="label-container">
+          <a href="retro-games/supersmashbros/">
+            <img src="retro-images/supersmashbros.png">
+            <span class="label">Super Smash Bros</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            </a>
+        </div>
+      </div>
+
+
+
+        <div class="column">
+          <div class="label-container">
+          <a href="retro-games/mariokart64/">
+            <img src="retro-images/mariokart64.png">
+            <span class="label">Mario Kart 64</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+
+
+          <div class="label-container">
+          <a href="retro-games/supermariobros/">
+            <img src="retro-images/supermariobros.png"s>
+            <span class="label">Super Mario Bros</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+    <hr>
+
+    <h1> All Games:</h1>
+    
+    <div class="search">
+        <input type="text" placeholder="Search..." oninput="">
+        <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div id="games">
+      <div class="label-container">
+        <a href="retro-games/custom/"><img src="retro-images/custom.png" alt="custom rom"></a><span class="label">Custom ROM</span></div>
+        <div class="label-container">
+          <a href="retro-games/doom64/"><img src="retro-images/doom64.png" alt="doom 64"></a><span class="label">Doom 64</span></div>
+          <div class="label-container">
+            <a href="retro-games/mariokart64/"><img src="retro-images/mariokart64.png" alt="mario kart 64"></a><span class="label">Mario Kart 64</span></div>
+            <div class="label-container">
+              <a href="retro-games/supermario64/"><img src="retro-images/supermario64.png" alt="super mario 64"></a><span class="label">Super Mario 64</span></div>
+              <div class="label-container">
+                <a href="retro-games/supermariobros/"><img src="retro-images/supermariobros.png" alt="super mario bros"></a><span class="label">Super Mario Bros</span></div>
+                <div class="label-container">
+                  <a href="retro-games/supersmashbros/"><img src="retro-images/supersmashbros.png" alt="super smash bros"></a><span class="label">Super Smash Bros</span></div>
+    </div>
+    </div>
+</body>
+</html>
+
+<script src="script.js"></script>

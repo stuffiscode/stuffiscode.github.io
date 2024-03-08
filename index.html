@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Games</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+
+    <!-- style for nav bar -->
+
+    <style>
+
+      .nav-button {
+        padding: 8px 16px; 
+        font-size: 14px; 
+        background-color: #111;
+        color: #999;
+        border: 2px solid #000; 
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        margin-right: 10px;
+      }
+  
+      .nav-button:first-child {
+        margin-right: 0;
+      }
+  
+      h2 {
+        margin-right: 10px;
+      }
+   
+      .nav-button:hover {
+        background-color: #fff; 
+        color: #333;
+      }
+
+      .label-container {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .label {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      color: #fff;
+      padding: 2px 0;
+      border-radius: 3px;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .label-container:hover .label {
+      opacity: 1;
+    }
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="images/logo.png" alt="logo">
+      <h2>Banana Games V1.8 </h2>
+      <button class="nav-button" onclick="kube()">Kube</button>
+      <button class="nav-button" onclick="credits()">Credits</button>
+      <button class="nav-button" onclick="cloakedtab()">Open AB Cloaked Tab</button>
+      <button class="nav-button" onclick="learningtab()">Open Learning Cloaked Tab</button>
+      <button class="nav-button" onclick="eggycar()">Eggy Car Site</button>
+      <button class="nav-button" onclick="shoutouts()">Shoutouts</button>
+      <h3>I AM AWARE HALF THE GAMES DON'T WORK!</h3>
+    </nav>
+
+<script>
+
+function openNewTab(url) {
+    window.open(url, '_blank');
+  }
+
+function kube(){
+    openNewTab('https://sites.google.com/clioschools.net/kube/home')
+  }
+
+  function credits(){
+    window.location.href = 'credits.html'
+  }
+
+
+function cloakedtab() {
+    var newWindow = window.open('about:blank', '_blank');
+
+    if (newWindow) {
+        var iframe = document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.margin = '0';
+        iframe.src = window.location.href;
+        
+        newWindow.document.body.style.margin = '0';
+        newWindow.document.body.appendChild(iframe);
+    } else {
+        alert('Unable to open a new window. Please check your browser settings.');
+    }
+
+}
+
+function eggycar(){
+    window.location.href = 'eggy-car.html';
+  }
+
+function learningtab() {
+  const randomNumber = Math.floor(Math.random() * 5);
+
+  if (randomNumber === 0) {
+    cloaked0();
+  } else if (randomNumber === 1) {
+    cloaked1();
+  } else if (randomNumber === 2) {
+    cloaked2();
+  } else if (randomNumber === 3) {
+    cloaked3();
+  } else if (randomNumber === 4) {
+    cloaked4();
+  }
+}
+
+function cloaked0() {
+  openNewTab('cloaked/classroom.html');
+}
+
+function cloaked1() {
+  openNewTab('cloaked/docs.html');
+}
+
+function cloaked2() {
+  openNewTab('cloaked/drive.html');
+}
+
+function cloaked3() {
+  openNewTab('cloaked/sheets.html');
+}
+
+function cloaked4() {
+  openNewTab('cloaked/slides.html');
+}
+
+function shoutouts() {
+  window.location.href = 'shoutouts.html'
+}
+
+</script>
+
+
+    <div class="featured">
+        <h1>Popular:</h1>
+        <div class="column">
+          <div class="label-container">
+          <a href="games/stickmanrunner/">
+            <img src="images/stickmanrunner.png">
+              <span class="label">Stickman Runner (my game)</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+          </div>
+
+
+          <div class="label-container">
+          <a href="games/snowrider3d/">
+            <img src="images/snowrider3d.png">
+            <span class="label">Wilma's Favorite Game</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+        <div class="row">
+          <div class="label-container">
+          <a href="games/topspeed3d">
+            <img src="images/topspeed3d.png">
+            <span class="label">Top Speed 3d</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+
+        <div class="row">
+          <div class="label-container">
+          <a href="games/drive-mad/">
+            <img src="images/drive-mad.jpg">
+            <span class="label">Drive Mad</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+            </a>
+        </div>
+      </div>
+
+
+
+        <div class="column">
+          <div class="label-container">
+          <a href="discord.html">
+            <img src="images/discord.png">
+            <span class="label">Discord</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+
+
+          <div class="label-container">
+          <a href="games/retro-bowl/">
+            <img src="images/retro-bowl.jpg">
+            <span class="label">Retro Bowl</span>
+            <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+            </div>
+          </a>
+        </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+    <hr>
+
+    <h1> All Games: (60)</h1>
+    
+    <div class="search">
+        <input type="text" placeholder="Search..." oninput="">
+        <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div id="games">
+        <div class="label-container">
+            <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a><span class="label">Bob The Robber 2</span></div>
+            <div class="label-container">
+              <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a><span class="label">Drive Mad</span></div>
+              <div class="label-container">
+                <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a><span class="label">Moto x3m</span></div>
+                <div class="label-container">
+                  <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a><span class="label">Moto x3m2</span></div>
+                  <div class="label-container">
+                    <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retro bowl"></a><span class="label">Retro Bowl</span></div>
+                    <div class="label-container">
+                      <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a><span class="label">Slope</span></div>
+                      <div class="label-container">
+                        <a href="games/snowrider3d/"><img src="images/snowrider3d.png" alt="snow rider 3d"></a><span class="label">Wilma's Favorite Game</span></div>
+                        <div class="label-container">
+                          <a href="games/topspeed3d/"><img src="images/topspeed3d.png" alt="top speed 3d"></a><span class="label">Top Speed 3d</span></div>
+                          <div class="label-container">
+                            <a href="games/vex3/"><img src="images/vex3.jpg" alt="vex 3"></a><span class="label">Vex 3</span></div>
+                            <div class="label-container">
+                              <a href="games/vex4/"><img src="images/vex4.jpg" alt="vex 4"></a><span class="label">Vex 4</span></div>
+                              <div class="label-container">
+                                <a href="games/vex5/"><img src="images/vex5.jpg" alt="vex 5"></a><span class="label">Vex 5</span></div>
+                                <div class="label-container">
+                                  <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a><span class="label">Vex 6</span></div>
+                                  <div class="label-container">
+                                    <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a><span class="label">Vex 7</span></div>
+                                    <div class="label-container">
+                                      <a href="games/stickmanrunner/"><img src="images/stickmanrunner.png" alt="stick man runner"></a><span class="label">Stick Man Runner (my game)</span></div>
+                                      <div class="label-container">
+                                        <a href="/games/fnaf/"><img src="images/fnaf.png" alt="fnaf"></a><span class="label">FNAF 1</span></div>
+                                        <div class="label-container">
+                                          <a href="/games/bitlife/"><img src="images/bitlife.png" alt="bitlife"></a><span class="label">BitLife</span></div>
+                                          <div class="label-container">
+                                            <a href="/games/minecraft/"><img src="images/minecraft.png" alt="bitlife"></a><span class="label">Minecraft</span></div>
+                                            <div class="label-container">
+                                              <a href="/games/cookieclicker/"><img src="images/cookieclicker.png" alt="cookie clicker"></a><span class="label">Cookie Clicker</span></div>
+                                              <div class="label-container">
+                                                <a href="/games/shortride/"><img src="images/shortride.png" alt="short ride"></a><span class="label">Short Ride</span></div>
+                                                <div class="label-container">
+                                                  <a href="/games/shortlife2/"><img src="images/shortlife2.png" alt="short life 2"></a><span class="label">Short Life 2</span></div>
+                                                  <div class="label-container">
+                                                    <a href="/games/tunnelrush/"><img src="images/tunnel-rush.png" alt="tunnel rush"></a><span class="label">Tunnel Rush</span></div>
+                                                    <div class="label-container">
+                                                      <a href="/games/eggycar/"><img src="images/eggycar.png" alt="eggy car"></a><span class="label">Eggy Car</span></div>    
+                                                  <div class="label-container">
+                                                    <a href="/games/amongus/"><img src="images/amongus.png" alt="among us"></a><span class="label">Among Us</span></div>
+                                                    <div class="label-container">
+                                                      <a href="/games/driftboss/"><img src="images/driftboss.png" alt="drift boss"></a><span class="label">Drift Boss</span></div> 
+                                                      <div class="label-container">
+                                                        <a href="/games/gettingoverit/"><img src="images/gettingoverit.png" alt="getting over it"></a><span class="label">Getting Over It</span></div> 
+                                                        <div class="label-container">
+                                                          <a href="/games/geometrydash/"><img src="images/geometrydash.png" alt="geometry dash"></a><span class="label">Geometry Dash</span></div> 
+                                                          <div class="label-container">
+                                                            <a href="/games/1v1.lol/"><img src="images/1v1.lol.png" alt="1v1.lol"></a><span class="label">1v1.LOL</span></div>
+                                                            <div class="label-container">
+                                                              <a href="/games/grindcraft/"><img src="images/grindcraft.png" alt="grindcraft"></a><span class="label">GrindCraft</span></div>
+                                                               <div class="label-container">
+                                                                <a href="/games/idledice/"><img src="images/idle-dice.png" alt="idle dice"></a><span class="label">Idle Dice</span></div> 
+                                                                <div class="label-container">
+                                                                  <a href="/games/idleminingempire/"><img src="images/idleminingempire.png" alt="idle mining empire"></a><span class="label">Idle Mining Empire</span></div> 
+                                                                  <div class="label-container">
+                                                                    <a href="/games/elasticman/"><img src="images/elasticman.png" alt="elastic man"></a><span class="label">Elastic Man</span></div> 
+                                                                    <div class="label-container">
+                                                                      <a href="/games/tinyfishing/"><img src="images/tinyfishing.png" alt="tiny fishing"></a><span class="label">Tiny Fishing</span></div> 
+                                                                      <div class="label-container">
+                                                                        <a href="/games/subwaysurfers/"><img src="images/subwaysurfers.png" alt="subway surfers"></a><span class="label">Subway Surfers</span></div>
+                                                                        <div class="label-container">
+                                                                          <a href="/games/tombofthemask/"><img src="images/tombofthemask.png" alt="tomb of the mask"></a><span class="label">Tomb Of The Mask</span></div>
+                                                                          <div class="label-container">
+                                                                            <a href="/games/basketrandom/"><img src="images/basketrandom.png" alt="basket random"></a><span class="label">Basket Random</span></div> 
+                                                                            <div class="label-container">
+                                                                              <a href="discord.html"><img src="images/discord.png" alt="discord"></a><span class="label">Discord</span></div> 
+                                                                              <div class="label-container">
+                                                                                <a href="games/dumx18/"><img src="images/dumx18.png" alt="dum x18"></a><span class="label">Dum x18 (EvilchickYT)</span></div>
+                                                                                  <div class="label-container">
+                                                                                    <a href="games/swordz.io/"><img src="images/swordz.io.png" alt="swordz.io"></a><span class="label">Swordz.io</span></div>
+                                                                                    <div class="label-container">
+                                                                                      <a href="games/fnf/"><img src="images/fnf.png" alt="fnf"></a><span class="label">FNF</span></div>
+                                                                                      <div class="label-container">
+                                                                                        <a href="games/sonic-exe/"><img src="images/sonic-exe.png" alt="fnf vs sonic.exe"></a><span class="label">FNF vs Sonic.exe</span></div>
+                                                                                        <div class="label-container">
+                                                                                          <a href="games/idlebreakout/"><img src="images/idlebreakout.png" alt="idle breakout"></a><span class="label">Idle Breakout</span></div>
+                                                                                          <div class="label-container">
+                                                                                            <a href="games/recoil/"><img src="images/recoil.png" alt="recoil"></a><span class="label">Recoil</span></div>
+                                                                                            <div class="label-container">
+                                                                                              <a href="games/amongus-fnf/"><img src="images/amongus-fnf.png" alt="fnf vs impostor"></a><span class="label">FNF vs Impostor</span></div>
+                                                                                              <div class="label-container">
+                                                                                                <a href="games/timeshooter/"><img src="images/timeshooter.png" alt="time shooter"></a><span class="label">Time Shooter 3</span></div>
+                                                                                                <div class="label-container">
+                                                                                                  <a href="games/funny-shooters-2/"><img src="images/funny-shooter-2s-.jpeg" alt="funny shooters 2"></a><span class="label">Funny Shooters 2</span></div>
+                                                                                                  <div class="label-container">
+                                                                                                    <a href="retro-games/custom/"><img src="retro-images/custom.png" alt="custom rom"></a><span class="label">Custom ROM</span></div> 
+                                                                                                    <div class="label-container">
+                                                                                                      <a href="retro-games/doom64/"><img src="retro-images/doom64.png" alt="doom 64"></a><span class="label">Doom 64</span></div>
+                                                                                                      <div class="label-container">
+                                                                                                        <a href="retro-games/mariokart64/"><img src="retro-images/mariokart64.png" alt="mario kart 64"></a><span class="label">Mario Kart 64</span></div>
+                                                                                                        <div class="label-container">
+                                                                                                          <a href="retro-games/supermario64/"><img src="retro-images/supermario64.png" alt="super mario 64"></a><span class="label">Super Mario 64</span></div>
+                                                                                                          <div class="label-container">
+                                                                                                            <a href="retro-games/supermariobros/"><img src="retro-images/supermariobros.png" alt="super mario bros"></a><span class="label">Super Mario Bros</span></div>
+                                                                                                            <div class="label-container">
+                                                                                                              <a href="retro-games/supersmashbros/"><img src="retro-images/supersmashbros.png" alt="super smash bros"></a><span class="label">Super Smash Bros</span></div> 
+                                                                                                              <div class="label-container">
+                                                                                                                <a href="games/happywheels/"><img src="images/happywheels.png" alt="happy wheels"></a><span class="label">Happy Wheels</span></div> 
+                                                                                                                <div class="label-container">
+                                                                                                                    <a href="games/agario/"><img src="images/agario.png" alt="agar.io"></a><span class="label">Agar.io</span></div> 
+                                                                                                                    <div class="label-container">
+                                                                                                                        <a href="games/fnfhuggy/"><img src="images/huggy.png" alt="fnf vs huggy wuggy"></a><span class="label">FNF vs Huggy Wuggy</span></div>
+                                                                                                                        <div class="label-container">
+                                                                                                                            <a href="games/dadish/"><img src="images/dadish.png" alt="dadish"></a><span class="label">Dadish</span></div>
+                                                                                                                            <div class="label-container">
+                                                                                                                                <a href="games/dadish2/"><img src="images/dadish2.png" alt="dadish 2"></a><span class="label">Dadish 2</span></div>
+                                                                                                                                <div class="label-container">
+                                                                                                                                    <a href="games/fnfchomper/"><img src="images/fnfchomper.png" alt="fnf vs chomper"></a><span class="label">FNF vs Chomper</span></div>
+                                                                                                                                    <div class="label-container">
+                                                                                                                                        <a href="games/fnfshaggy/"><img src="images/fnfshaggy.png" alt="fnf vs shaggy"></a><span class="label">FNF vs Shaggy</span></div>
+                                                                                                                                        <div class="label-container">
+                                                                                                                                            <a href="games/fnfwhitty/"><img src="images/fnfwhitty.png" alt="fnf vs whitty"></a><span class="label">FNF vs Whitty</span></div>
+                                                                                                                                            <div class="label-container">
+                                                                                                                                                <a href="games/underdev/"><img src="images/underdev.png" alt="Under Devleopment"></a><span class="label">Under Development</span></div>
+    </div>
+    </div>
+</body>
+</html>
+
+<script src="script.js"></script>
