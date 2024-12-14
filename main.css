@@ -9,7 +9,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    backdrop-filter: blur(10px) saturate(94%) brightness(70%);
+    backdrop-filter: blur(10px) saturate(50%) brightness(70%);
     color: #fff;
     display: flex;
     height: 7vw;
