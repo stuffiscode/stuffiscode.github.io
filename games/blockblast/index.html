@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block Blast Online Unblocked - Free Block Blast Puzzle Game</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Block Blast Online Unblocked - Free Block Blast Puzzle Game" />
+    <meta name="description" content="Play Block Blast online unblocked - the addictive free block puzzle game! Match colorful blocks, create epic combos, and challenge yourself with endless levels. No download required, play instantly in your browser!" />
+    <meta name="keywords" content="Block Blast online, Block Blast unblocked, puzzle game online, free block game, block matching game, Block Blast browser game, unblocked games, online puzzle game, block blast solver" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Block Blast" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://blockblast.co/" />
+    <meta property="og:title" content="Block Blast Online Unblocked - Free Block Matching Game" />
+    <meta property="og:description" content="Play Block Blast online unblocked - Match blocks, create combos, and enjoy endless puzzle fun! Free to play, no downloads needed. Play now in your browser!" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://blockblast.co/" />
+    <meta property="twitter:title" content="Block Blast Online Unblocked - Free Block Matching Game" />
+    <meta property="twitter:description" content="Play Block Blast online unblocked - Match blocks, create combos, and enjoy endless puzzle fun! Free to play, no downloads needed. Play now in your browser!" />
+    
+    <!-- Canonical URL -->
+    <meta rel="canonical" href="https://blockblast.co/" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#38bdf8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Block Blast" />
+    
+    <style>
+      /* Enhanced color variables */
+      :root {
+        --primary-blue: #38bdf8;
+        --primary-purple: #c084fc;
+        --accent-pink: #ec4899;
+        --accent-green: #22c55e;
+        --background-dark: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --hover-bg: rgba(51, 65, 85, 0.7);
+        --text-gray: #94a3b8;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--background-dark), #1e1b4b);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .container::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 20%,
+            rgba(56, 189, 248, 0.15) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(168, 85, 247, 0.15) 0%,
+            transparent 40%
+          );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      header {
+        text-align: center;
+        padding: 80px 40px;
+        background: linear-gradient(to bottom right, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 32px;
+        margin-bottom: 48px;
+        position: relative;
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(56, 189, 248, 0.15),
+          rgba(168, 85, 247, 0.15),
+          rgba(236, 72, 153, 0.15)
+        );
+        animation: gradientBG 8s linear infinite;
+        background-size: 200% 200%;
+        opacity: 0.8;
+      }
+
+      h1 {
+        font-size: min(3.5rem, 6vw);
+        background: linear-gradient(135deg, 
+          #38bdf8,
+          #818cf8,
+          #c084fc,
+          #e879f9
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 24px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        position: relative;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        white-space: nowrap;
+        padding: 0 20px;
+      }
+
+      .description {
+        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+        color: #e2e8f0;
+        max-width: 800px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+        font-weight: 400;
+        opacity: 0.95;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        padding: 0 20px;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, 
+          var(--primary-blue),
+          var(--primary-purple),
+          var(--accent-pink)
+        );
+        color: white;
+        padding: 18px 48px;
+        border-radius: 99px;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, 
+          rgba(255, 255, 255, 0.2),
+          rgba(255, 255, 255, 0)
+        );
+        transform: translateX(-100%) rotate(45deg);
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 6px 30px rgba(56, 189, 248, 0.4);
+        background: linear-gradient(135deg, 
+          var(--primary-purple),
+          var(--accent-pink),
+          var(--primary-blue)
+        );
+      }
+
+      .cta-button:hover::before {
+        transform: translateX(100%) rotate(45deg);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: min(2.5rem, 8vw);
+          white-space: normal;
+          padding: 0 10px;
+        }
+
+        .description {
+          font-size: 1.1rem;
+          padding: 0 10px;
+        }
+
+        .cta-button {
+          padding: 16px 36px;
+          font-size: 1.1rem;
+        }
+
+        header {
+          padding: 60px 20px;
+        }
+      }
+
+      .content-section {
+        background: rgba(30, 41, 59, 0.8);
+        padding: 32px;
+        border-radius: 28px;
+        margin-bottom: 24px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 100%;
+      }
+
+      .content-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+      }
+
+      h2 {
+        color: #38bdf8;
+        margin-bottom: 24px;
+        font-size: 2.2em;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        width: 100%;
+      }
+
+      .feature-card,
+      .mode-card,
+      .power-up-card,
+      .tip-card,
+      .achievement-card {
+        background: var(--card-bg);
+        border: none;
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8px);
+      }
+
+      .feature-card:hover,
+      .mode-card:hover,
+      .power-up-card:hover,
+      .tip-card:hover,
+      .achievement-card:hover {
+        background: var(--hover-bg);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .hero {
+        background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.05),
+          rgba(192, 132, 252, 0.05)
+        );
+        backdrop-filter: blur(10px);
+        border: none;
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .game-preview-container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: 3rem auto;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--background-dark);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+      }
+
+      .game-preview {
+        position: relative;
+        width: 100%;
+        padding-bottom: 62.25%;
+        background-image: linear-gradient(45deg, #1a1f35 25%, transparent 25%),
+          linear-gradient(-45deg, #1a1f35 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, #1a1f35 75%),
+          linear-gradient(-45deg, transparent 75%, #1a1f35 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        background-color: #151b2e;
+      }
+
+      .game-preview::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 38px;
+        background: linear-gradient(
+          to bottom,
+          rgba(30, 41, 59, 0.98) 0%,
+          rgba(30, 41, 59, 0.95) 100%
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 2;
+        backdrop-filter: blur(8px);
+      }
+
+      .game-preview::after {
+        content: "⬤ ⬤ ⬤";
+        position: absolute;
+        top: 0;
+        left: 16px;
+        width: 100%;
+        height: 38px;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 12px;
+        line-height: 38px;
+        letter-spacing: 4px;
+        z-index: 3;
+      }
+
+      .game-preview-overlay {
+        position: absolute;
+        top: 38px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(3px);
+        transition: all 0.3s ease;
+        z-index: 1;
+        text-decoration: none;
+      }
+
+      .game-preview-overlay:hover {
+        background: rgba(15, 23, 42, 0.75);
+      }
+
+      .play-message {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .play-button {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        color: white;
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .play-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(56, 189, 248, 0.3);
+        background: linear-gradient(
+          135deg,
+          var(--primary-purple),
+          var(--accent-pink)
+        );
+      }
+
+      .play-button svg {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+      }
+
+      .play-button:hover svg {
+        transform: translateX(4px);
+      }
+
+      .inline-link {
+        text-decoration: none;
+        transition: all 0.3s ease;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 500;
+      }
+
+      .inline-link:hover {
+        text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+      }
+
+      /* Simplified list styles */
+      ul li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 1.25rem;
+        color: var(--text-gray);
+      }
+
+      ul li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .tutorial-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 24px 0;
+        display: grid;
+        gap: 16px;
+      }
+
+      .tutorial-content li {
+        position: relative;
+        padding-left: 32px;
+        color: var(--text-gray);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 1.1rem;
+      }
+
+      .tutorial-content li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        border-radius: 6px;
+        opacity: 0.9;
+        transform: rotate(45deg);
+        box-shadow: 0 2px 8px rgba(56, 189, 248, 0.2);
+      }
+
+      .tutorial-content li::after {
+        content: "→";
+        position: absolute;
+        left: 6px;
+        top: 4px;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .tutorial-content li:hover::before {
+        transform: rotate(45deg) scale(1.1);
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      }
+
+      .tutorial-steps {
+        display: grid;
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      .tutorial-step {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 24px;
+        transition: all 0.3s ease;
+      }
+
+      .tutorial-step:hover {
+        background: var(--hover-bg);
+        transform: translateY(-2px);
+      }
+
+      .faq-content dl {
+        margin: 24px 0;
+      }
+
+      .faq-content dt {
+        color: #38bdf8;
+        font-weight: 600;
+        margin: 16px 0 8px;
+        font-size: 1.1em;
+        padding: 16px;
+        background: rgba(15, 23, 42, 0.6);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+      }
+
+      .faq-content dt:hover {
+        background: rgba(56, 189, 248, 0.1);
+        transform: translateX(10px);
+      }
+
+      .faq-content dd {
+        margin: 0 0 24px 16px;
+        padding: 16px;
+        color: #94a3b8;
+        border-left: 3px solid rgba(56, 189, 248, 0.4);
+      }
+
+      footer {
+        width: 100%;
+        text-align: center;
+        padding: 32px 0;
+        margin-top: 48px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin: 24px 0;
+      }
+
+      .social-link {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 12px 24px;
+        border-radius: 99px;
+        background: linear-gradient(135deg, 
+          rgba(56, 189, 248, 0.1),
+          rgba(192, 132, 252, 0.1)
+        );
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .social-link:hover {
+        background: linear-gradient(135deg, 
+          rgba(56, 189, 248, 0.2),
+          rgba(192, 132, 252, 0.2)
+        );
+        border-color: rgba(56, 189, 248, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .solver-section {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.9),
+          rgba(30, 41, 59, 0.9)
+        );
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+
+      .solver-content {
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .solver-description {
+        font-size: 1.2em;
+        color: #e2e8f0;
+        margin-bottom: 32px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .solver-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        margin-bottom: 40px;
+      }
+
+      .solver-feature {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .solver-feature:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+      }
+
+      .solver-feature h3 {
+        color: #38bdf8;
+        font-size: 1.3em;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--accent-pink)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .solver-feature p {
+        color: #94a3b8;
+        line-height: 1.6;
+      }
+
+      .solver-cta {
+        margin-top: 40px;
+      }
+
+      .solver-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(45deg, #38bdf8, #818cf8);
+        color: #fff;
+        padding: 16px 40px;
+        border-radius: 99px;
+        font-size: 1.3em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px -8px rgba(56, 189, 248, 0.5);
+      }
+
+      .solver-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.6);
+      }
+
+      .solver-icon {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+      }
+
+      .game-modes {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .mode-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .mode-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+      }
+
+      .mode-card h3 {
+        color: #38bdf8;
+        font-size: 1.3em;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--accent-pink)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .mode-card p {
+        color: #94a3b8;
+        margin-bottom: 16px;
+        line-height: 1.6;
+      }
+
+      .mode-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .mode-features li {
+        color: #e2e8f0;
+        margin: 8px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .mode-features li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #38bdf8;
+      }
+
+      .powerups-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        width: 100%;
+      }
+
+      .powerup-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .powerup-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+      }
+
+      .powerup-card h3 {
+        color: #38bdf8;
+        font-size: 1.3em;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--accent-pink)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .powerup-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+      }
+
+      .tips-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .tip-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .tip-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+      }
+
+      .tip-card h3 {
+        color: #38bdf8;
+        font-size: 1.3em;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--accent-pink)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .tip-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tip-card li {
+        color: #94a3b8;
+        margin: 12px 0;
+        padding-left: 24px;
+        position: relative;
+        line-height: 1.6;
+      }
+
+      .tip-card li::before {
+        content: "•";
+        position: absolute;
+        left: 8px;
+        color: #38bdf8;
+      }
+
+      .achievements-section {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.9),
+          rgba(30, 41, 59, 0.9)
+        );
+        border: 1px solid rgba(56, 189, 248, 0.3);
+      }
+
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .achievement-card {
+        background: rgba(15, 23, 42, 0.6);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .achievement-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(56, 189, 248, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+      }
+
+      .achievement-card h3 {
+        color: #38bdf8;
+        font-size: 1.3em;
+        margin-bottom: 12px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--accent-pink)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .achievement-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+      }
+
+      .inline-link {
+        color: #38bdf8;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+        padding-bottom: 1px;
+        font-weight: 500;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .inline-link:hover {
+        border-bottom-color: var(--primary-purple);
+        text-shadow: 0 0 8px rgba(56, 189, 248, 0.3);
+      }
+
+      .button {
+        background: linear-gradient(
+          45deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        border: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(56, 189, 248, 0.3);
+        background: linear-gradient(
+          45deg,
+          var(--primary-purple),
+          var(--accent-pink)
+        );
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      ul li:before {
+        content: "•";
+        color: var(--primary-blue);
+        position: absolute;
+        left: 0;
+        font-size: 1.2em;
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .mode-features li,
+      .power-up-features li {
+        color: var(--text-gray);
+        font-size: 0.95rem;
+      }
+
+      /* Enhanced scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.6);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue),
+          var(--primary-purple)
+        );
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(
+          135deg,
+          var(--primary-purple),
+          var(--accent-pink)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Block Blast Online Unblocked - Free Block Matching Game</h1>
+        <p class="description">
+          Experience the ultimate block matching puzzle game right in your browser! Match colorful blocks, 
+          create epic combos, and challenge yourself with endless levels. No downloads required - 
+          play Block Blast unblocked instantly and enjoy hours of addictive puzzle fun!
+        </p>
+        <a href="https://blockblast.co" class="cta-button">
+          Play Block Blast Unblocked Now
+        </a>
+      </header>
+
+      <div class="game-preview-container">
+        <div class="game-preview">
+          <a
+            href="http://blockblast.co"
+            class="game-preview-overlay"
+            target="_blank"
+          >
+            <div class="play-message">Ready to Play Block Blast?</div>
+            <div class="play-button">
+              Play Now
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <main>
+        <section class="content-section">
+          <h2>Welcome to Block Blast Online Unblocked: The Ultimate Free Puzzle Game</h2>
+          <p>
+            Block Blast is an exciting online puzzle game where you match colorful blocks to create amazing combinations 
+            and clear levels. With its intuitive gameplay and challenging levels, Block Blast offers endless entertainment 
+            for puzzle game enthusiasts. Play anywhere, anytime, completely unblocked and free!
+          </p>
+        </section>
+
+        <section class="content-section solver-section">
+          <h2>Need Help? Try Block Blast Solver!</h2>
+          <div class="solver-content">
+            <p class="solver-description">
+              Stuck on a difficult level? Block Blast Solver is here to help!
+              Our advanced solver tool can help you:
+            </p>
+            <div class="solver-features">
+              <div class="solver-feature">
+                <h3>🎯 Get Optimal Moves</h3>
+                <p>
+                  Find the best possible moves to clear blocks efficiently and
+                  maximize your score.
+                </p>
+              </div>
+              <div class="solver-feature">
+                <h3>🔄 Level Solutions</h3>
+                <p>
+                  Get complete solutions for challenging levels that have you
+                  stuck.
+                </p>
+              </div>
+              <div class="solver-feature">
+                <h3>📈 Strategy Tips</h3>
+                <p>
+                  Learn advanced strategies and techniques to improve your
+                  gameplay.
+                </p>
+              </div>
+            </div>
+            <div class="solver-cta">
+              <a
+                href="https://blockblastsolver.pro"
+                target="_blank"
+                class="solver-button"
+              >
+                Try Block Blast Solver
+                <svg viewBox="0 0 24 24" class="solver-icon">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>Game Modes & Features</h2>
+          <div class="game-modes">
+            <div class="mode-card">
+              <h3>🎯 Classic Mode</h3>
+              <p>
+                The traditional
+                <a href="https://blockblast.co" class="inline-link"
+                  >Block Blast</a
+                >
+                experience. Match blocks, create combos, and reach target scores
+                to advance through increasingly challenging levels.
+              </p>
+              <ul class="mode-features">
+                <li>Progressive difficulty</li>
+                <li>Score-based advancement</li>
+                <li>Unlimited levels</li>
+              </ul>
+            </div>
+            <div class="mode-card">
+              <h3>⏱️ Time Trial</h3>
+              <p>
+                Race against the clock! Clear as many blocks as possible before
+                time runs out. Perfect for quick gaming sessions and improving
+                your speed.
+              </p>
+              <ul class="mode-features">
+                <li>Fast-paced gameplay</li>
+                <li>Time bonuses</li>
+                <li>High score challenges</li>
+              </ul>
+            </div>
+            <div class="mode-card">
+              <h3>🧩 Puzzle Mode</h3>
+              <p>
+                Strategic challenge mode where every move counts. Clear all
+                blocks with limited moves to solve intricate puzzles.
+              </p>
+              <ul class="mode-features">
+                <li>Brain-teasing layouts</li>
+                <li>Limited moves</li>
+                <li>Strategic planning</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>Power-Ups & Special Blocks</h2>
+          <div class="powerups-grid">
+            <div class="powerup-card">
+              <h3>🌟 Rainbow Block</h3>
+              <p>
+                A versatile block that can match with any color. Perfect for
+                creating large combinations or clearing difficult spots.
+              </p>
+            </div>
+            <div class="powerup-card">
+              <h3>💥 Bomb Block</h3>
+              <p>
+                Explodes in a cross pattern, clearing multiple blocks at once.
+                Great for breaking through tough arrangements.
+              </p>
+            </div>
+            <div class="powerup-card">
+              <h3>⚡ Lightning Block</h3>
+              <p>
+                Clears an entire row or column. Strategic placement is key to
+                maximizing its effectiveness.
+              </p>
+            </div>
+            <div class="powerup-card">
+              <h3>🎨 Color Blast</h3>
+              <p>
+                Removes all blocks of a selected color from the board. Perfect
+                for late-game situations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>Pro Tips & Strategies</h2>
+          <div class="tips-content">
+            <div class="tip-card">
+              <h3>🎯 Basic Strategies</h3>
+              <ul>
+                <li>Start from the bottom to create chain reactions</li>
+                <li>Look for larger groups before making moves</li>
+                <li>Clear blocked areas first to open up more possibilities</li>
+                <li>Save power-ups for challenging situations</li>
+                <li>
+                  Practice regularly at
+                  <a href="https://blockblast.co" class="inline-link"
+                    >Block Blast online</a
+                  >
+                  to improve your skills
+                </li>
+              </ul>
+            </div>
+            <div class="tip-card">
+              <h3>🏆 Advanced Techniques</h3>
+              <ul>
+                <li>Create cascading combinations for bonus points</li>
+                <li>Plan multiple moves ahead</li>
+                <li>Position power-ups strategically</li>
+                <li>Use corners to trap and clear blocks efficiently</li>
+              </ul>
+            </div>
+            <div class="tip-card">
+              <h3>💡 Score Maximization</h3>
+              <ul>
+                <li>Focus on creating large block groups</li>
+                <li>Chain power-ups for massive combos</li>
+                <li>Clear blocks in quick succession for combo bonuses</li>
+                <li>Prioritize special blocks in combinations</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section achievements-section">
+          <h2>Achievements & Rewards</h2>
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <h3>🏅 Combo Master</h3>
+              <p>Create a 10+ block combination</p>
+            </div>
+            <div class="achievement-card">
+              <h3>⭐ Perfect Clear</h3>
+              <p>Clear all blocks with no moves remaining</p>
+            </div>
+            <div class="achievement-card">
+              <h3>🎮 Speed Demon</h3>
+              <p>Complete a level in under 30 seconds</p>
+            </div>
+            <div class="achievement-card">
+              <h3>👑 Block Legend</h3>
+              <p>
+                Reach level 100 in
+                <a href="https://blockblast.co" class="inline-link"
+                  >Block Blast</a
+                >
+                Classic Mode
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>How to Play Block Blast</h2>
+          <div class="tutorial-content">
+            <ul>
+              <li>Match 3 or more blocks of the same color to clear them</li>
+              <li>
+                Create longer combinations for bonus points and special effects
+              </li>
+              <li>Clear blocks strategically to trigger chain reactions</li>
+              <li>Use power-ups wisely to overcome challenging levels</li>
+              <li>Complete level objectives before running out of moves</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>Why Choose Block Blast Online Unblocked?</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <h3>Play Anywhere</h3>
+              <p>
+                Access Block Blast online unblocked from any browser - no
+                restrictions, no downloads needed. Play at school, work, or
+                anywhere!
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Always Free</h3>
+              <p>
+                Enjoy unlimited free gameplay with Block Blast unblocked. All
+                features and levels are accessible without any payment required.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>No Downloads</h3>
+              <p>
+                Play Block Blast instantly in your browser - no installation
+                needed. Jump right into the action with our unblocked version!
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Regular Updates</h3>
+              <p>
+                Experience new levels and features in Block Blast online
+                unblocked, with weekly content updates and challenges.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>How to Play Block Blast Online Unblocked</h2>
+          <div class="tutorial-content">
+            <h3>Quick Start Guide</h3>
+            <ul>
+              <li>
+                <strong>Instant Access:</strong> Visit blockblast.co to play the
+                unblocked version instantly
+              </li>
+              <li>
+                <strong>Match & Clear:</strong> Connect three or more blocks to
+                eliminate them
+              </li>
+              <li>
+                <strong>Chain Reactions:</strong> Create cascading combinations
+                for higher scores
+              </li>
+              <li>
+                <strong>Power-Ups:</strong> Unlock special blocks and boosters
+                as you play
+              </li>
+            </ul>
+
+            <h3>Pro Tips for Block Blast Online</h3>
+            <ul>
+              <li>
+                <strong>Browser Optimization:</strong> Works best on Chrome,
+                Firefox, and Safari - play unblocked on any browser
+              </li>
+              <li>
+                <strong>Save Progress:</strong> Create an account to save your
+                progress in the unblocked version
+              </li>
+              <li>
+                <strong>Offline Mode:</strong> Keep playing even when internet
+                connection is unstable
+              </li>
+              <li>
+                <strong>Cross-Device Play:</strong> Switch between devices
+                seamlessly while playing unblocked
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <h2>Frequently Asked Questions About Block Blast Online Unblocked</h2>
+          <div class="faq-content">
+            <h3>General Questions</h3>
+            <dl>
+              <dt>Is Block Blast really unblocked and free to play?</dt>
+              <dd>
+                Yes! Block Blast online unblocked is completely free and
+                accessible from any browser. No restrictions, no hidden fees.
+              </dd>
+
+              <dt>Can I play Block Blast online without downloading?</dt>
+              <dd>
+                Absolutely! Block Blast is fully playable in your browser - no
+                downloads required. Just visit our website and start playing
+                instantly.
+              </dd>
+
+              <dt>Is the unblocked version the same as the app version?</dt>
+              <dd>
+                Yes, the online unblocked version includes all features from the
+                app version, plus the convenience of instant browser play.
+              </dd>
+            </dl>
+
+            <h3>Technical Questions</h3>
+            <dl>
+              <dt>Which browsers support Block Blast online unblocked?</dt>
+              <dd>
+                Block Blast works perfectly on all major browsers including
+                Chrome, Firefox, Safari, and Edge. Play unblocked anywhere!
+              </dd>
+
+              <dt>Do I need a fast internet connection?</dt>
+              <dd>
+                Block Blast online unblocked is optimized for all connection
+                speeds. Once loaded, it runs smoothly even with slower
+                connections.
+              </dd>
+            </dl>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="social-links">
+          <a href="https://blockblast.co" target="_blank" rel="noopener" class="social-link">
+            Unblocked Block Blast
+          </a>
+          <a href="https://blockblastsolver.pro" target="_blank" rel="noopener" class="social-link">
+            Unblocked Block Blast Solver
+          </a>
+        </div>
+        <p>&copy; Block Blast - Free Online Block Puzzle Game. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
