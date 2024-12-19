@@ -1,34 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1v1.lol</title>
-    <link rel="icon" type="image/x-icon" href="favicon.png"> 
-    <body style="background-color:#1C1C1C"></body>
-    <style>
-        body { display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        #container { position: relative; }
-        #fullscreen-iframe { width: 900px; height: 520px; border: none; border-radius: 10px; overflow: hidden; }
-        #fullscreen-button { position: absolute; bottom: 0; left: 20px; margin: -20px; }
-        /* Adjusted the left property to move the button 20px to the right */
-    </style>
-</head>
-<body>
+<html><head><base target="_blank"><base target="_blank"></head><body><div id="fr" data="<iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://gotlgsogl-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/u/6/group/docs-classroom-s/attach/770f570099aa/go.xml?part=0.1&amp;view=1&amp;authuser=6&amp;container=ig&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>"><iframe width="100%" height="100%" src="https://gotlgsogl-opensocial.googleusercontent.com/gadgets/ifr?url=https://groups.google.com/u/6/group/docs-classroom-s/attach/770f570099aa/go.xml?part=0.1&amp;view=1&amp;authuser=6&amp;container=ig" frameborder="0" allowfullscreen=""></iframe></div>
+<button class="c-button" type="button" onclick="PlayTo(this)" style="display: none;">CLICK TO PLAY</button>
+<div class="bottom-text">Unblocked Games G+</div>
 
-<div id="container">
-    <iframe id="fullscreen-iframe" src="https://mexisofunny.github.io/math/1v1.lol/" frameborder="0"></iframe>
-    <button id="fullscreen-button">Fullscreen</button>
-</div>
+<style>
+  .c-button {
+    min-width: 100%;
+    font-family: fantasy;
+    appearance: auto;
+    border: 0;
+    border-color: #fff;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .c-button:hover {
+    background: #320d90;
+  }
+  
+  .c-button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 4px #cbd6ee;
+  }
+  
+  .c-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .bottom-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+</style>
 
 <script>
-    document.getElementById('fullscreen-button').addEventListener('click', () => document.getElementById('fullscreen-iframe').requestFullscreen?.());
+  function PlayTo(i) {
+    // Önceki sibling metin düğümü olabilir, bu yüzden bir önceki "element" siblingi bulalım
+    var n = i.previousElementSibling;
+    if (n) {
+      // Div'in içeriğini iframe ile güncelleyelim
+      n.innerHTML = n.getAttribute("data");
+      // Butonu gizleyelim
+      i.style.display = "none";
+    }
+  }
 </script>
-<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
-    new Crate({
-        server: '1120506921036816537', // Mexicraft Forever
-        channel: '1120510313436028938' // #webchat
-    })
-</script>
-</body>
-</html>
+</body></html>
