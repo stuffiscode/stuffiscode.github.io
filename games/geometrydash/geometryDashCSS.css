@@ -1,0 +1,172 @@
+head {
+	background-color: #9F82FF;
+}
+
+h1:not(#title) {
+	background-color: #9F8200;
+	margin-top: 10px;
+	font-size: 50px;
+	font-family: "Aldrich";
+	background-height: 100px;
+	text-align: center;
+	padding: 14px 16px;
+	outline: thin solid;
+	text-shadow: 2px 2px 5px black;
+}
+
+body {
+	background-color: #D5DEED;
+	font-family: verdana;
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+#content, html, body {
+    height: 98%;
+	overflow: hidden;
+}
+
+p {
+	font-weight: bold;
+}
+
+button {
+  font-weight: bold;
+  padding: 0 10px;
+  border: 1px black thin;
+  border-radius: 8px;
+  margin:0px;
+}
+
+tr td:not(#back) {
+	width:820px;
+	height:460px;
+	margin-top:0px;
+}
+
+#goLeft, #goRight, #backbutton {
+	width: 30px;
+	height: 30px;
+	margin:20px;
+	background-color:#FFFFFF;
+}
+
+#goLeft, #goRight {
+	margin-top:-70px; 
+}
+
+#backbutton {
+	width:70px;
+}
+
+#goLevel0, #goLevel1, #goLevel2 {
+	width:666px;
+	height:300px;
+	border-radius:50px;
+	font-family: "Aldrich";
+	font-size: 75px;
+	margin-top:-70px;
+}
+
+#goLevel0 {
+	background-color: #0095DD;
+}
+#goLevel1 {
+	background-color: #14BA01;
+}
+#goLevel2 {
+	background-color: #D11A02;
+}
+#goLevel0:hover{
+	background-color: #0062AA;
+}
+#goLevel1:hover{
+	background-color: #019800;
+}
+#goLevel2:hover{
+	background-color: #660E0E;
+}
+
+#homescreen{
+	width: 820px;
+	height:570px;
+	position: absolute;
+	background: linear-gradient(180deg, #ff0000, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3, #ff00aa);
+	background-size: 1800% 1800%;
+	animation: rainbow 18s ease infinite;
+} 
+
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+#playbutton, #tutorial {
+	text-align: center;
+	height:150px;
+	width:150px;
+	font-family:"Orbitron";
+	font-size:30px;
+	margin-left:173.3px;
+	margin-bottom:50px;
+	background-color:#000000;
+	color:#FFFFFF;
+	border-color:#000000;
+}
+
+#title{
+	font-family:"Orbitron";
+	padding: 30px 16px;
+	text-align:center;
+	font-size:80px;
+	text-shadow: 2px 2px 5px black;
+}	
+
+.popup {
+	position:absolute;
+	display: inline-block;
+}
+
+.popuptext {
+	visibility: hidden;
+	width: 300px;
+	height:330px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	vertical-align:center;
+	border-radius: 6px;
+	padding: 8px 0;
+	position: absolute;
+	z-index: 1;
+	font-family:"Orbitron";
+	font-size:30px;
+	margin-left: -390px;
+	margin-top:-150px;
+}
+
+#closethis {
+	font-size: 14px;
+	font-style: italic;
+}
+
+.popup .show {
+	visibility: visible;
+	-webkit-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity:1 ;}
+}
+
+#left {
+	background-color:#99FFFF;
+	background-image: url("bg.png");
+	margin:auto;
+	border: 10px black thin;
+    width: 820px;
+	height:570px;
+}

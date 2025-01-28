@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Home</title>
+	<link rel="shortcut icon" href="https://assets.circle.com/assets/images/favicons/android-chrome-512x512-15693d4b63ea24c50b981b5026b3fcd7.png" type="image/x-icon" />
+	<link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="geometryDashCSS.css"></link>
+	<h1 id = "header">Abhi's Website</h1>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><!--This document makes use of jQuery for animations, this line imports it--> 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!--importing library allowing jQuery animations to change css properties such as color-->
+
+
+</head>
+<body>
+	<div id="left">
+		<div id = "homescreen">
+			<button id = "hideHeader" onclick = "hideheader()">click to hide header</button>
+			<button id = "showHeader" onclick = "showheader()" style="visibility:hidden">click to show header</button>
+			<h1 id="title">Geometry Dash!</h1>
+			<button id="playbutton" onclick="showLevels()">Play now!</button>
+			<button id="tutorial" onclick="myFunction()">How to play</button>
+			<div class="popup">
+				<span class="popuptext" id="myPopup">
+					1. Use space to control the character<br>
+					2. Don't hit spikes <br>
+					3. Don't crash into walls <br>
+					That's about it! <br>
+					<span id="closethis">Click "how to play" to get rid of this popup</span>
+				</span>
+			</div>
+			<script>
+				function myFunction() {
+					if (!(opaque)){
+						$('#title, #playbutton, #tutorial').css('opacity', 0.2);
+						opaque = true;
+					} else {
+						$('#title, #playbutton, #tutorial').css('opacity', 1);
+						opaque = false;
+					}
+					var popup = document.getElementById("myPopup");
+					popup.classList.toggle("show")
+				}
+				function hideheader(){
+					$('#header').hide(500); 
+					$('#hideHeader').hide(500);
+					$('#showHeader').css("visibility", "visible");
+				}
+				function showheader(){
+					$('#header').show(500); 
+					$('#hideHeader').show(500);
+					$('#showHeader').css("visibility", "hidden");
+				}
+			</script>
+		</div>
+		<table id="buttons">
+			<tr>
+				<td id = "back"></td>
+				<td id = "back"><button id="backbutton" onclick = "showHomeScreen()">Back</button></td>
+				<td id = "back"></td>
+			</tr>
+			<tr id="00" style="display:none">
+				<td><button id="goLeft" onclick="show2()"></button></td>
+				<td><button id="goLevel0" onclick="level1()">Level 1: Introduction</button></td>
+				<td><button id="goRight" onclick="show1()"></button></td>
+			</tr>
+			<tr id="11" style="display:none">
+				<td><button id="goLeft" onclick="show0()"></button></td>
+				<td><button id="goLevel1" onclick="level2()">Level 2: The jungle!</button></td>
+				<td><button id="goRight" onclick="show2()"></button></td>
+			</tr>
+			<tr id="22" style="display:none">
+				<td><button id="goLeft" onclick="show1()"></button></td>
+				<td><button id="goLevel2" onclick="level3()">Level 3: Techno Dash</button></td>
+				<td><button id="goRight" onclick="show0()"></button></td>
+			</tr>
+		</table>
+		<script>
+			function showLevels(){
+				$("#homescreen").hide(500);
+				$("#buttons").show()
+				$("#00").show(500);
+				$("#left").animate({backgroundColor: "#99FFFF"}, 1000);
+			}
+			function showHomeScreen(){
+				$("#buttons").hide(500);
+				$("#homescreen").show(500);
+			}
+			function begin(){
+				percentage= 0;
+				//calculating the length of the level by adding the quantities of all measureable items in level layout
+				for (let i = 0; i < platarray.length; i ++){
+					//the following are events and therefore cannot by measured so the program eleminates them
+					if (!platarray[i].includes("colorChange") &&
+					!platarray[i].includes("colorChanGe") &&
+					!platarray[i].includes("bgchange") &&
+					!platarray[i].includes("bgchanGe") &&
+					!platarray[i].includes("cgchanGe") &&
+					!platarray[i].includes("cgchange") &&
+					!platarray[i].includes("staticCamera") &&
+					!platarray[i].includes("end")
+					){
+						percentage += parseInt(platarray[i][platarray[i].length - 1]); //adding to percentage
+						//console.log(parseInt(platarray[i][platarray[i].length - 1]));
+					}
+				}
+				//console.log("percentage", percentage);
+				attempts = 1; //starting off level attempts at 1
+				//adding the ground
+				theplatform.push(new platform(-40, 399+30, 860, 150, 0, 0));
+				theplatform.push(new platform(-40, 399-420, 860, 150, 0, 0));
+				//adding the attempt text
+				theplatform.push(new msg(240, 239, "Attempt " + attempts, "#00FF00")); 
+				//initialise player
+				player = new space(-40, 300, 1);
+				//begin animation
+				stopid = window.setInterval(doAMove, 15);
+			}
+			function level1(){
+				$('#buttons').hide(500);
+				$('#myCanvas').show();
+				//presets for levels
+				//actual block and event layout
+				platarray = ["09","09","00000T00001","09","06","bbbb1","09","000000bbbb1","09","bb1", "s4", "09", "b00000000b1", "s00000000s3","s0000T000s1","s00000000s6","b00000000b1", "09", "04", "bb1", "s4", "06", "00000000bb1", "000000000s4", "05", "s9",
+				"bb1", "s4","bbb1", "s4", "bbbb1", "09", "000000000s4", "000000bbbb1", "000000000s7", "09", "bbbs00000s3", "s00000000s5", "s00000sbbb3","s00000000s9","bbb0000bbb3","bbb00T0bbb1","bbb0000bbb6","03","bgchanGe:#FF9833150","cgchanGe:#CC6500150","colorChanGe:#FF0000150","06", "b1",
+				"bb1", "bbb1", "bb1", "b1", "02", "000000000b1", "00000000bb1", "0000000bbb1", "00000000bb1", "000000000b1", "04","s00000000s6", "bbb0000bbb8", 
+				"s00000000s6", "b00000000b1", "bb000000bb1", "bbb0000bbb9", "bb000000bb1", "b00000000b1","s00000000s6", "b00000000s1", "bb0000000s1", "bbb000000s1", "bbbb00000s1", "bbbbb0000s9",
+				"bbbb00000s1","bbb000000s1","bb0000000s1","b00000000s1", "s00000000s4", "s00000000b1", "s0000000bb1", "s000000bbb1","s00000bbbb1", "s0000bbbbb9","s00000bbbb1","s000000bbb1","s0000000bb1", "s00000000b1", "s00000000s6", "bbb0000bbb2","bbbs000bbb9", "bbb0000bbb4", "bbb000sbbb9", "bbb0000bbb2", "bb000000bb1", "b00000000b1","colorChanGe:#222222100",
+				"bgchanGe:#000000100", "cgchanGe:#000000100", "09", "09", "000000b0001", "02", "000b0000001", "02", "00b00000b01", "02","b00000000b1", "02","0000bb00001",  "02", "00b00000001", "02","bgchanGe:#344556200",
+				"cgchanGe:#122334200", "000000b0001", "02", "000b0000001", "02", 
+				"00b00000b01", "02","b00000000b1", "02","0000bb00001",  "02", "00b00000001", "02", "s00000000s9", "s00000000s2","s0000T000s1","s00000000s6","bbbpbbbb1", "bgchange:#007FFF001", "cgchange:#004CCC","09",
+				"09","s9", "bb1", "s4", "bbb1", "s4", "bbbb1", "09", "000000000s4", "000000bbbb1", "000000000s7","09","s00000000s9",
+				"MMMW00000s1","s00000000s6", "s00000wmmm1", "s00000000s6","MMMW00000s1","s00000000s6", "s00000wmmm1", "s00000000s4","s0000T000s1","s00000000s9","s00000000s6","cgchanGe:#00AA00050", "bgchanGe:#00FF00050","bbbpbbbb1", "09","05","bbbbs3", "06","00000sbbbb3", 
+				"09","s0000000bb1", "s0000000bb3", "s00000000s2", "s00R00000s1","s00000000s3", "s00R0000sb1","s0000000sb3","s00R000sbb1","s000000sbb3","s00R00sbbb1","s00000sbbb3","s00B00000s1","s00000000s1", "s0000000Bs1", "s00000000s1","s00B00000s1","s00000000s1", "s0000000Bs1", "s00000000s1", "bbbb00000s7", "s00000000s1", "bbb000000s3","s00000000s2", 
+				"s000000bbb3", "s00000000s1","s0000000bb3", "s00000000s2", "bbbb00000s3", "s00000000s1", "bbb000000s3","s00000000s1",
+				"s00000b00s5", "sb0000000s5","bgchanGe:#FF9833030","cgchanGe:#CC6500030", "s000000b0s8", "bbb0000bbb1","bbb0T00bbb1","bbb0000bbb9","end"]
+				portalOrder = [0,4]; //different portals used
+				animOrder = [[90, 9, 460, 25, "final"]]; //different animation parameters
+				globalColor = ["#00FF00", "#FF0000", "#D5DEED", "#A1ABBA"]; //initial color palette
+				spikeTexture = [document.getElementById("spike"), document.getElementById("spike1")] //different spike textures
+				currentLevel = 1;
+				messages = ["Press space to go up!", "Avoid spikes!","Nice job!", "Get ready...", "Let's try something new...", "Congratulations!"]; //different messages 
+				begin(); //initialise level
+			}
+			function level2(){
+				$('#buttons').hide(500);
+				$('#myCanvas').show();
+				platarray = ["b00000000b9","bbs0000sbb9","bs0000000b9","bbbs00000s9","colorChanGe:#097C1F060","colorChanGe1:#C1BFBF060","bgchanGe:#777777050","cgchanGe:#999999060",
+				 "mmmmwWMMMM9","s00000000s7",
+				 "s000sbbbbb1","s000sb000b1","colorChange:#09BC2A","colorChange1:#ADA28F","bgchange:#825D25","cgchange:#543D1F","spsb000b1",
+				 "bbbbbb1","b0000000009","mmmmm0000mmmmmm1",
+				 "s00000000s4","MMMM0000MMMMMM1","s00000000s4","mmmmm0000mmmmmm1","s00000000s4","MMMM0000MMMMMM1",
+				 "s00000000s4","mmmmm0000mmmmmm1","s00000000s4","MMMMW000WMMMMM1","s00000000s4","mmmmmw000wmmmmm1","s00000000s4","MMMMW000WMMMMM1",
+				 "s00000000s4","mmmmmw000wmmmmm1","s00000000s4","s0bb00000s2","s00000000s4", "s0000bb00s2","s00000000s4", 
+				 "s000bb000s2","s00000000s2","s0000T000s1","texture:3","staticCamera","s00000000s2", "s000000bbs2","s00000000s4","b00000000b9", "bbpbbbbb1","colorChange:#444444", "cgchanGe:#444444060",
+				 "b00000000b1","b00000000b8","b00000000b9","s00000000s9","bb000bbbbb1", "b00000bbbb4", "bb00000bbb4", "bbb00000bb4", "bbbb00000b4", "bbbbb000bb1", 
+				 "bbbb00000b4","bbb00000bb4","bb00000bbb4","b00000bbbb4", "bb000bbbbb1", 
+				 "s00000sbbb4", "bs00000sbb4", "bbs00000sb4", "bbbs00000s4", "bbbbs000sb1",
+				 "b00000000b6","colorChanGe1:#FF0000040",
+				 "MMMMW0000bs1", "s00000000s9", "colorChanGe1:#ADA28F040","s0000wmmmm1","s00000000s9","colorChanGe1:#FF0000040","MMMMW0000s1", 
+				 "s00000000s9", "colorChanGe1:#ADA28F040","s0000wmmmm1","s00000000s9","colorChanGe1:#FF0000040","MMMMW0000s1", "s00000000s9", "colorChanGe1:#ADA28F040","s0000wmmmm1","s00000000s9","colorChanGe1:#FF0000040","bgchanGe:#FF0000100","cgchanGe:#000000100","colorChanGe:#825D25",
+				 "bbbs000bbb9","bbb0000bbb2","bbb000sbbb2","texture:1","staticCamera","bbb000sbbb7","bbb0000bbb9","bbbs000bbb1", "0000p1","0000p1","colorChange:#6D3F19", "cgchange:#300F0B","bgchange:#BA0101", 
+				 "b5","b5","s00000000b9","s00b0000sb5","bgchange:#F2710E", "bgchanGe:#BA0101040","s00000000s1", "s000000B0s1","s00000000s1","s0B000000s1","s00000000s1","s000000B0s1","s00b00000s1",
+				 "s00b0000sb3","bgchange:#F2710E", "bgchanGe:#BA0101040","s00b0000sb6","s00b00000b4","bgchange:#F2710E", "bgchanGe:#BA0101040",
+				 "s00bs0000b9","s00mw0000b1","bgchange:#F2710E", "bgchanGe:#BA0101040","s00mw0000b8","s000000msb2","bgchange:#F2710E", "bgchanGe:#BA0101040","s000000msb6","bb0000000s4","bgchange:#F2710E", "bgchanGe:#BA0101040","bb0000b00s3", "bbs000b00s4",
+				 "s0000000b4","bgchange:#F2710E", "bgchanGe:#BA0101040", "s00b0000b2","s00b000sb3", "s0000000b4",
+				 "s00p0000sb1","bgchange:#F2710E", "bgchanGe:#BA0101040","colorChange:#4E5450","colorChange1:#4E5450",
+				 "s00000000s6","s0000T000s1","s00000000s6","s00000000s6","s00000000s6","s00000000s6", "mmmmmmmbbb3", 
+				 "s00000000s6", "mmmmmbbbbb3", "s00000000s6", "mmmmmmbbbb3",
+				 "s00000000s6", "bbbbbMMMMM3","s00000000s6", "bbbbMMMMMM3","s00000000s6", "mmmmmmmbbb3", "s00000000s6", "mmmmMMMMMM1","mmmmmMMMMM1",
+				 "mmmmmmMMMM1",
+				 "mmmmmmmMMM1","bbb0000bbb5", "colorChanGe:#09BC2A040","colorChanGe1:#ADA28F040","bgchanGe:#825D25040","cgchanGe:#543D1F040","bbs0000sbb5", "bbb00000bb1", "bb00000bbb1", "b00000bbbb2", "bb00000bbb1", "bbb00000bb1", "bbbb00000b1",
+				 "bbb00000bb1", "bb00000bbb1", "b00000bbbb2", "bb00000bbb1", "bbb00000bb1", "bbbb00000b1",
+				 "bbb00000bb1", "bb00000bbb1", "b00000bbbb2", "bb00000bbb1", "bbb00000bb1", "bbbb00000b1",
+				 "bbb00000bb1", "bb00000bbb1", "b00000bbbb2", "bb00000bbb1", "bbb00000bb1", "bbbb00000b1", "end"];
+				animOrder = [[90, 4, 460, 90] ,[60, 0.2, 800, 99,"finalDown"],[120, 20, 400, 30,"final"], [120, 4, 560, 230]]
+				portalOrder = [6,0,1,4,2,2]
+				globalColor = ["#064912", "#888888", "#444444", "#777777"];
+				spikeTexture = [document.getElementById("spike"), document.getElementById("spike1")]
+				messages = ["Freeze!", "DON'T TOUCH ANYTHING!"]
+				currentLevel = 2;
+				begin();
+			}
+			function level3(){
+				$('#buttons').hide(500);
+				$('#myCanvas').show();
+				platarray = ["S00000000S9", "s00000000s9","M000MMMMMMM1","colorChange1:#FFFF00", "s00000000s3", "MM000MMMMMM1","colorChange1:#00FFFF", "s00000000s3", 
+							 "MMM000MMMMM1","colorChange1:#FF0000", "s00000000s3", "MMMM000MMMM1","colorChange1:#0000FF",
+							 "s00000000s3", "MMMMM000MMM1","colorChange1:#FF00FF","s00000000s3","MMMMMM000MM1","colorChange1:#FFFF00","b000bb000b1", 
+							 "b000bbpb1","colorChanGe:#FFAE00120","b00000000b3", "S00000000S9","b0000bbbbb1",
+							 "bb0000bbbb1","bbb0000bbb1","bbbb0000bb1","colorChanGe:#FFFF00120","bbbbb0000b1","bbbbb000Sb1","bbbbbS000b1","bbbbb000Sb1","bbbbbS000b1","bbbbb000Sb1",
+							 "bbbbb0000b4","bbbbbW000b4","bbbbb0000b2","colorChanGe:#00FF00120","bbbbb000wb4","bbbbb0000b2","bbbbbW000b1","bbbbbbb00b1","bbbbbW000b2","bbbbb0000b1",
+							 "bbbb00000b1","bbb00000bb1","bb00000bbb3","colorChanGe:#00C3FF120","bb00000bbb3","bbS000Sbbb9","bb00000bbb4","colorChanGe:#0033FF120", 
+							 "bbW0000bbb3", "bb00000bbb3", "bb0000wbbb3", "bb000bbbbb1",
+							 "bb0000wbbb2","b0000bbbbb1","bb0000bbbb1","bbb0000bbb1","bbbb0000bb1","colorChanGe:#AE00FF120","bbbbb0000b1","bbbbbbpb1","b00000000b9", "b000bb000b3","b00wbbW00b7",
+							 "b000bb000b4","bW00bb00wb7",
+							 "staticCamera","b000bb000b6", "bbb0bb0bbb3", "b000bb000b4", "bS00bb00Sb5","colorChange:#FFFFFF","bpbbbbbb1","b00000000b9", "S00000000S9", "bbS0000Sbb1", 
+							 "S00000000S9","bbS0000Sbb1", "S00000000S9",
+							 "bS000SS00S1", "S00000000S6","S00SS000Sb1", "S00000000S6","bS000SbS0S1","colorChange1:#FFFFFF", "S00000000S6","S00SS000Sb1", "S00000000S6","s000SSwmmm1","colorChange1:#FFFF00",
+							 "S00000000S6","MMMWSS000s1","colorChange1:#FFAE00",
+							 "S00000000S6","MMMWSS000s1","colorChange1:#FF0000","S00000000S6","s000SSwmmm1","colorChange1:#AE00FF","S00000000S6","colorChanGe:#FFFF00120",
+							 "b00000000b9", "b000bb000b7","colorChanGe:#FF8800120","b00wbbW00b9","b000bb000b3","bW00bb00wb4", "colorChanGe:#FF0000120","bW00bb00wb4",
+							 "b000bb000b3","bbb0bb0bbb4","b000bb000b4","bbbbbb000b1","colorChanGe:#8800FF120", "s00000000s6", "bs000000sb2", "s00000000s3", "bbs0000sbb2", "s00000000s3", "bbbS00Sbbb2", "s00000000s2","s0000t000s1", "s00000000s6",
+							 "bbSp0Sbb1","colorChange:#FF0000","colorChanGe:#00000060","bS000000Sb7","colorChange:#FF0000","colorChanGe:#00000060","bs000000sb7","colorChange:#FF0000",
+							 "colorChanGe:#00000060","bbS0000Sbb7","colorChange:#FF0000","colorChanGe:#00000060","colorChange1:#FF0000","colorChanGe1:#00000060", "S00000000S4", "MMMMMM000MMM3", "colorChange:#FF0000","colorChanGe:#00000060","colorChange1:#FF0000","colorChanGe1:#00000060",
+							 "S00000000S4", "MMMM000MMMMM3","colorChange:#FF0000","colorChanGe:#00000060","colorChange1:#FF0000","colorChanGe1:#00000060","S00000000S4", "MM000MMMMMMMM3",
+							 "colorChange:#FF0000","colorChanGe:#00000060","colorChange1:#FF0000","colorChanGe1:#00000060","S00000000S4", "MMM000MMMMMMM3","colorChange:#FF0000","colorChanGe:#00000060","colorChange1:#FF0000",
+							 "colorChanGe1:#00000060","colorChanGe:#000000090","S00000000S4", "MMMMM000MMMM3","S00000000S9","colorChanGe:#FFFF00120","bbbpbbbb2","S00000000S4", "bS000Sbbbb1","bbS000Sbbb1",
+							 "bbbS000Sbb1","bbbbS000Sb2","bbbS000Sbb1","bbS000Sbbb3","bbS00Sbbbb1","colorChanGe:#FF0000120","bbS00Sbbbb2","bbS000Sbbb3","bbbpbbbb1",
+							 "bbS000Sbbb4","bbbS000Sbbb4","bbbbS000Sbbb2","colorChanGe:#AA00FF120","bbbbS000Sbbb6","bbbS000Sbbb4","bbS000Sbbb4","bbbS000Sbbb2","colorChanGe:#0000FF120","bbbS000Sbbb2","bbbbS000Sbbb8","bbbS000Sbbb4","bbS000Sbbb2","colorChanGe:#9999FF120","bbS000Sbbb2","bbbpbbbb1",
+							 "bb00000bbb4","bbb00000bbb4","bbbbS000Sbbb5","colorChanGe:#00FF00120","bbbbS000Sbbb3","bbbS000Sbbb4","bbS000Sbbb4","bbbS000Sbbb4","bbbbS000Sbbb1","colorChanGe:#FFFF00120","bbbbS000Sbbb7","bbbS000Sbbb4","bbS000Sbbb4",
+							 "end"];							 
+				animOrder = [[30,5,360,95, "final"],[90,15,360,16, "final"],[30,5,360,500, "final"]]
+				portalOrder = [7, 0, 8, 9, 10, 3, 0, 2]
+				globalColor = ["#AA00FF", "#00FF00", "#000000", "#444444"];
+				platarrayBackup = platarray;
+				animOrderBackup = animOrder;
+				portalOrderBackup = portalOrder;
+				spikeTexture = [document.getElementById("spike2"), document.getElementById("spike3")]
+				messages = ["I like this part :)"];
+				currentLevel = 3;
+				begin();
+			}
+			function show1(){
+				$("#left").animate({backgroundColor: "#77FF77"}, 1000);
+				if ($("#00").is(":visible")){
+					$("#00").hide(500,function(){$("#11").show(500);});
+				} else {
+					$("#22").hide(500,function(){$("#11").show(500);});
+				}
+			}
+			function show2(){
+				$("#left").animate({backgroundColor: "#FF9977"}, 1000);
+				if ($("#00").is(":visible")){
+					$("#00").hide(500,function(){$("#22").show(500);});
+				} else {
+					$("#11").hide(500,function(){$("#22").show(500);});
+				}
+			}
+			function show0(){
+				$("#left").animate({backgroundColor: "#99FFFF"}, 1000);
+				if ($("#22").is(":visible")){
+					$("#22").hide(500,function(){$("#00").show(500);});
+				} else {
+					$("#11").hide(500,function(){$("#00").show(500);});
+				}
+			}
+		</script>
+		<canvas id="myCanvas" width="820" height="570" style="display:none"></canvas>
+		<img id="spike" width="0" height="0" src="FakeSpike01.png" alt="The Scream">
+		<img id="spike1" width="0" height="0" src="FakeSpike02.png" alt="The Scream">
+		<img id="player" width="0" height="0" src="Cube053.png" alt="The Scream">
+		<img id="0" width="0" height="0" src="block1.png" alt="The Scream">
+		<img id="1" width="0" height="0" src="block3.png" alt="The Scream">
+		<img id="2" width="0" height="0" src="block4.png" alt="The Scream">
+		<img id="3" width="0" height="0" src="block2.png" alt="The Scream">
+		<img id="portalLeft" width="0" height="0" src="potalleft.png" alt="The Scream">
+		<img id="portalRight" width="0" height="0" src="potalright.png" alt="The Scream">
+		<img id="bg" width="0" height="0" src="bg.png" alt="The Scream">
+		<img id="pause" width="0" height="0" src="pause.png" alt="The Scream">
+		<img id="play" width="0" height="0" src="play.png" alt="The Scream">
+		<img id="menu" width="0" height="0" src="menu.png" alt="The Scream">
+		<img id="ball" width="0" height="0" src="ball.png" alt="The Scream">
+		<img id="invPlayer" width="0" height="0" src="Cube054.png" alt="The Scream">
+		<img id="spike2" width="0" height="0" src="whtspk.png" alt="The Scream">
+		<img id="spike3" width="0" height="0" src="whtspkInv.png" alt="The Scream">
+		<img id="ufo" width="0" height="0" src="ufo.png" alt="The Scream">
+		<img id="ring" width="0" height="0" src="ring.png" alt="The Scream">
+		<img id="bluering" width="0" height="0" src="bluering.png" alt="The Scream">
+		<script src="geometryDashJS.js" defer></script>
+	</div>
+</body>
+<html>
